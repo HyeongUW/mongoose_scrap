@@ -2,6 +2,7 @@ var express = require ("express");
 var mongoose = require("mongoose");
 var expressHandlebars = require("express-handlebars");
 var bodyParser = require("body-parser");
+var path = require('path');
 
 var PORT = process.env.PORT || 3000;
 
@@ -11,7 +12,7 @@ var router = express.Router();
 
 require("./config/routes")(router);
 
-app.use(express.static(__dirname + "./public"));
+app.use(express.static(__dirname));
 
 
 app.engine("handlebars", expressHandlebars({
