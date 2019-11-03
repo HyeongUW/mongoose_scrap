@@ -1,8 +1,8 @@
-### Acknowledgments
+<!-- ### Acknowledgments
 
 * This web-application is still under continuing development! See below for anticipated release date.
 * For further development details see [further development plan](furtherDevPlan.md)
----------------------------------------------
+--------------------------------------------- -->
 
 
 # mongoose_scrap
