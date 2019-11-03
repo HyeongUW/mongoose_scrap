@@ -7,6 +7,7 @@ module.exports = {
     fetch: function(cb) {
         scrape(function(data) {
             var articles = data;
+            /* console.log("headlines.js -> articles: ", articles); */
             for(var i = 0; i < articles.length; i++) {
                 articles[i].date = makeDate();
                 articles[i].saved = false;

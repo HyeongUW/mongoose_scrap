@@ -12,6 +12,7 @@ module.exports = function(router) {
 
     router.get("/api/fetch", function(req, res) {
         headlinesController.fetch(function(err, docs) {
+            /* console.log("routes.js -> docs: ", docs); */
             if(!docs || docs.insertedCount === 0) {
                 res.json({
                     message: "No new articles today. Check back tomorrow!"
@@ -28,6 +29,7 @@ module.exports = function(router) {
         var query = {};
         if (req.query.saved) {
             query = req.query;
+            /* console.log("routes.js -> router.get", query); */
         }
 
         headlinesController.get(query, function(data) {

@@ -6,7 +6,7 @@ $(document).ready(function() {
     initPage();
   
     function initPage() {      
-      articleContainer.empty();
+      articleContainer.empty();  
       $.get("/api/headlines?saved=false").then(function(data) {
         
         if (data && data.length) {
@@ -93,6 +93,7 @@ $(document).ready(function() {
   
     function handleArticleSave() {
       var articleToSave = $(this).parents(".panel").data();
+      /* console.log(articleToSave); */
       articleToSave.saved = true;
 
       $.ajax({
@@ -109,6 +110,7 @@ $(document).ready(function() {
   
     function handleArticleScrape() {
       $.get("/api/fetch").then(function(data) {
+        /* console.log("handleArticleScrape initiated"); */
         initPage();
         bootbox.alert($("<h3 class='text-center m-top-80'>").text(data.message));
       });
