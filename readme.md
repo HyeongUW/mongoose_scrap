@@ -15,7 +15,7 @@ Web application that lets users view and leave comments on the scraped latest ne
 
 
 ## Deployed Page:
-https://damp-mesa-32459.herokuapp.com/
+https://still-fjord-26775.herokuapp.com/
 
 ## Use Example:
 
