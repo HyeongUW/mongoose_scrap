@@ -2,15 +2,17 @@ var request = require("request");
 var cheerio = require("cheerio");
 
 var scrape = function (cb) {
-    request("http://www.nytimes.com", function(err, res, body) {
+    request("https://www.nytimes.com", function(err, res, body) {
         var $ = cheerio.load(body);
         
-        /* console.log("scrape.js -> body: ", body); */
         /* console.log("scrape.js -> $: ", $); */
+        console.log("scrape.js -> $('.theme-summary'): ", $(".theme-summary").each());
 
         var articles = [];
 
-        $(".theme-summary").each( function(i, element) {
+        $ (".theme-summary").each( function(i, element) {
+
+            console.log("scrape.js -> i: ", i);
             console.log("scrape.js -> element: ", element);
             console.log("scrape.js -> this: ", this);
             var head = $(this).children(".story-heading").text().trim();
